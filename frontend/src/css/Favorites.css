@@ -1,0 +1,169 @@
+.favorites {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.favorites h1 {
+  font-size: 2.8rem;
+  color: #fff;
+  margin-bottom: 2rem;
+
+  border-left: 4px solid #e50914;
+  padding-left: 1rem;
+}
+
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.movie-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+
+  background-color: #1a1a1a;
+
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease;
+}
+
+.movie-card:hover {
+  transform: translateY(-6px);
+
+  box-shadow:
+    0 12px 25px rgba(0, 0, 0, 0.4);
+}
+
+.movie-poster {
+  position: relative;
+  aspect-ratio: 2 / 3;
+}
+
+.movie-poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.movie-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,.95),
+    rgba(0,0,0,.15)
+  );
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  gap: .75rem;
+  padding: 1rem;
+
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+
+.movie-card:hover .movie-overlay {
+  opacity: 1;
+}
+
+.details-btn,
+.remove-btn {
+  border: none;
+  border-radius: 8px;
+
+  padding: .75rem;
+
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.details-btn {
+  background: #e50914;
+  color: white;
+}
+
+.details-btn:hover {
+  background: #f40612;
+}
+
+.remove-btn {
+  background: rgba(255,255,255,.12);
+  color: white;
+}
+
+.remove-btn:hover {
+  background: rgba(255,255,255,.2);
+}
+
+.movie-info {
+  padding: 1rem;
+}
+
+.movie-info h3 {
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.favorites-empty {
+  max-width: 700px;
+  margin: 5rem auto;
+
+  padding: 3rem;
+
+  text-align: center;
+
+  background: rgba(255,255,255,.03);
+
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 16px;
+}
+
+.favorites-empty h2 {
+  color: #e50914;
+  margin-bottom: 1rem;
+}
+
+.favorites-empty p {
+  color: #b3b3b3;
+  line-height: 1.7;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.movies-grid > * {
+  animation: fadeIn .4s ease;
+}
+
+@media (max-width: 768px) {
+  .favorites {
+    padding: 1rem;
+  }
+
+  .favorites h1 {
+    font-size: 2rem;
+  }
+}
