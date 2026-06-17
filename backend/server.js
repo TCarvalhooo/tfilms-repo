@@ -55,7 +55,7 @@ app.get('tfilms-repo-backend.onrender.com/movies', async (req, res) => {
 
 //movie-info
 
-app.get('/movie/:id', async (req,res)=>{
+app.get('tfilms-repo-backend.onrender.com/movies/:id', async (req,res)=>{
 
     try{
 
