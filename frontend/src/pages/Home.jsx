@@ -10,7 +10,7 @@ function Home() {
 
     async function getMovies() {
     try {
-        const response = await api.get('/movies');
+        const response = await api.get('tfilms-repo-backend.onrender.com/movies');
 
         
         setMovies(response.data);
