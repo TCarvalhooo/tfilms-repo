@@ -9,7 +9,7 @@ function MovieInfo() {
     const [movie, setMovie] = useState(null);
 
     async function getMovie() {
-        const response = await api.get(`/movie/${id}`);
+        const response = await api.get(`/movies/${id}`);
         setMovie(response.data);
     }
 
