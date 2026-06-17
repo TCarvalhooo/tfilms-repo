@@ -9,7 +9,7 @@ function MovieInfo() {
     const [movie, setMovie] = useState(null);
 
     async function getMovie() {
-        const response = await api.get(`tfilms-repo-backend.onrender.com/movie/${id}`);
+        const response = await api.get(`/movie/${id}`);
         setMovie(response.data);
     }
 
