@@ -9,7 +9,7 @@ function Favorites() {
 
   async function getMovies() {
     try {
-      const response = await api.get("tfilms-repo-backend.onrender.com/favorites");
+      const response = await api.get("/favorites");
       setMovies(response.data);
     } catch (error) {
       console.error("Erro ao buscar favoritos:", error);
@@ -22,7 +22,7 @@ function Favorites() {
 
   async function removeFavorite(id) {
     try {
-      await api.delete(`tfilms-repo-backend.onrender.com/favorites/${id}`);
+      await api.delete(`/favorites/${id}`);
 
       setMovies(
         movies.filter(movie => movie.id !== id)
