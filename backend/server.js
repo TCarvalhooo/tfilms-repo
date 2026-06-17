@@ -21,7 +21,7 @@ const url = "https://tfilms-repo-backend.onrender.com"
 
 
 // home 
-app.get('/movies', async (req, res) => {
+app.get('tfilms-repo-backend.onrender.com/movies', async (req, res) => {
     try {
 
         const response = await axios.get(
@@ -118,13 +118,13 @@ app.post('/favorites', async (req,res)=>{
     res.status(201).json(favorite)
 })
 
-app.get('/favorites', async (req, res) => {
+app.get('tfilms-repo-backend.onrender.com/favorites', async (req, res) => {
     const movies = await prisma.favorite.findMany()
    
     res.status(200).json(movies)
 });
 
-app.delete('/favorites/:id', async (req, res) => {
+app.delete('tfilms-repo-backend.onrender.com/favorites/:id', async (req, res) => {
     try {
         await prisma.favorite.delete({
             where: {
