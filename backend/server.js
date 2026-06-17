@@ -12,8 +12,12 @@ dotenv.config();
 const prisma = new PrismaClient()
 const app = express();
 
-app.use(cors());
+const cors = require("cors");
+app.use(cors({
+    origin: "https://tfilms-repo-backend.onrender.com"
+}));
 app.use(express.json());
+const url = "https://tfilms-repo-backend.onrender.com"
 
 
 // home 
